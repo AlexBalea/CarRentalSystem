@@ -27,7 +27,7 @@ namespace CarRentalSystem.Pages_Cars
         [BindProperty]
         public Car Car { get; set; } = default!;
 
-        // For more information, see https://aka.ms/RazorPagesCRUD.
+        
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -37,6 +37,8 @@ namespace CarRentalSystem.Pages_Cars
 
             _context.Cars.Add(Car);
             await _context.SaveChangesAsync();
+
+            Console.WriteLine($"Car Created: {Car.CarID}");
 
             return RedirectToPage("./Index");
         }

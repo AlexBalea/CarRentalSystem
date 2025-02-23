@@ -16,31 +16,31 @@
             <input type="hidden" asp-for="Booking.BookingID" />
             <div class="form-group">
                 <span class="text-danger">*</span>
-                <label asp-for="Booking.CarID" class="control-label"></label>
+                <label asp-for="Booking.CarID" class="control-label">Car</label>
                 <select asp-for="Booking.CarID" class="form-control" asp-items="ViewBag.CarID"></select>
                 <span asp-validation-for="Booking.CarID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <span class="text-danger">*</span>
-                <label asp-for="Booking.CustomerID" class="control-label"></label>
+                <label asp-for="Booking.CustomerID" class="control-label">Customer</label>
                 <select asp-for="Booking.CustomerID" class="form-control" asp-items="ViewBag.CustomerID"></select>
                 <span asp-validation-for="Booking.CustomerID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <span class="text-danger">*</span>
-                <label asp-for="Booking.StartDate" class="control-label"></label>
+                <label asp-for="Booking.StartDate" class="control-label">Start Date</label>
                 <input asp-for="Booking.StartDate" class="form-control" />
                 <span asp-validation-for="Booking.StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <span class="text-danger">*</span>
-                <label asp-for="Booking.EndDate" class="control-label"></label>
+                <label asp-for="Booking.EndDate" class="control-label">End Date</label>
                 <input asp-for="Booking.EndDate" class="form-control" />
                 <span asp-validation-for="Booking.EndDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                
-                <label asp-for="Booking.TotalCost" class="control-label"></label>
+
+                <label asp-for="Booking.TotalCost" class="control-label">Total Cost</label>
                 <input asp-for="Booking.TotalCost" class="form-control" />
                 <span asp-validation-for="Booking.TotalCost" class="text-danger"></span>
             </div>

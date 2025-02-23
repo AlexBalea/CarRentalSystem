@@ -37,7 +37,7 @@ namespace CarRentalSystem.Pages_Bookings
             }
             Booking = booking;
            ViewData["CarID"] = new SelectList(_context.Cars, "CarID", "Make");
-           ViewData["CustomerID"] = new SelectList(_context.Customers, "CustomerID", "DriverLicenseNumber");
+           ViewData["CustomerID"] = new SelectList(_context.Customers, "CustomerID", "Name");
             return Page();
         }
 

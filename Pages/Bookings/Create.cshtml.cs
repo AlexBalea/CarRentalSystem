@@ -26,7 +26,12 @@ namespace CarRentalSystem.Pages_Bookings
             ViewData["CarID"] = new SelectList(await _context.Cars.ToListAsync(), "CarID", "Make");
             ViewData["CustomerID"] = new SelectList(await _context.Customers.ToListAsync(), "CustomerID", "Name");
 
-            Booking = new Booking();
+            Booking = new Booking
+            {
+                StartDate = System.DateTime.Now,
+                EndDate = System.DateTime.Now.AddDays(1)
+
+            };
 
             return Page();
         }

@@ -23,12 +23,29 @@ namespace CarRentalSystem.Models
         public Customer? Customer { get; set; } // Allow null, EF will populate it later
 
         [Required]
+        [DataType(DataType.DateTime)]
+        [Display(Name = "Start Date")]
         public DateTime StartDate { get; set; }
 
         [Required]
+        [DataType(DataType.DateTime)]
+        [Display(Name = "End Date")]
+        [CustomValidation(typeof(Booking), "ValidateEndDate")]
         public DateTime EndDate { get; set; }
 
         [Range(1, 10000)]
         public decimal TotalCost { get; set; }
+
+        public static ValidationResult ValidateEndDate(DateTime endDate, ValidationContext context)
+        {
+            var booking = (Booking)context.ObjectInstance;
+
+            if (endDate <= booking.StartDate)
+            {
+                return new ValidationResult("End Date must be later than Start Date.");
+            }
+
+            return ValidationResult.Success;
+        }
     }
 }

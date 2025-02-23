@@ -36,13 +36,14 @@ namespace CarRentalSystem.Pages_Bookings
                 return NotFound();
             }
             Booking = booking;
-           ViewData["CarID"] = new SelectList(_context.Cars, "CarID", "Make");
-           ViewData["CustomerID"] = new SelectList(_context.Customers, "CustomerID", "Name");
+           
+            ViewData["CarID"] = new SelectList(_context.Cars, "CarID", "Make");
+            ViewData["CustomerID"] = new SelectList(_context.Customers, "CustomerID", "Name");
+            
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more information, see https://aka.ms/RazorPagesCRUD.
+
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)

@@ -27,7 +27,6 @@ namespace CarRentalSystem.Pages_Customers
         [BindProperty]
         public Customer Customer { get; set; } = default!;
 
-        // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)

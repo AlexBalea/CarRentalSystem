@@ -14,13 +14,13 @@ namespace CarRentalSystem.Models
         public int CarID { get; set; }
 
         [ForeignKey("CarID")]
-        public Car? Car { get; set; } // Allow null, EF will populate it later
+        public Car? Car { get; set; } 
 
         [Required(ErrorMessage = "Please select a Customer.")]
         public int CustomerID { get; set; }
 
         [ForeignKey("CustomerID")]
-        public Customer? Customer { get; set; } // Allow null, EF will populate it later
+        public Customer? Customer { get; set; } 
 
         [Required]
         [DataType(DataType.DateTime)]
